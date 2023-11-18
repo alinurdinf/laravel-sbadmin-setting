@@ -15,7 +15,9 @@
         "laravel/framework": "^10.0",
         "laravel/legacy-factories": "^1.0",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^4.0"
+        "laravel/ui": "^4.0",
+        "rap2hpoutre/laravel-log-viewer": "^2.3",
+        "santigarcor/laratrust": "^8.2"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^2.0",
