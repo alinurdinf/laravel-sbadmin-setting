@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Role;
 use App\Models\User as ModelsUser;
-use App\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,10 +15,33 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(LaratrustSeeder::class);
+        $systemRole = Role::create([
+            'name' => 'system',
+            'display_name' => 'SYSTEM ADMINISTRATOR',
+            'description' => 'SYSTEM ADMINISTRATOR',
+        ]);
+
+        $dosenRole = Role::create([
+            'name' => 'dosen',
+            'display_name' => 'DOSEN',
+            'description' => 'DOSEN',
+        ]);
+
+        $mahasiswaRole = Role::create([
+            'name' => 'mahasiswa',
+            'display_name' => 'MAHASISWA',
+            'description' => 'MAHASISWA',
+        ]);
+
+        // USER role
+        $userRole = Role::create([
+            'name' => 'user',
+            'display_name' => 'USER',
+            'description' => 'USER',
+        ]);
 
         // SADMIN role
-        $sadminrole = Role::create([
+        $sadminRole = Role::create([
             'name' => 'sadmin',
             'display_name' => 'SUPER ADMINISTRATOR',
             'description' => 'SUPER ADMINISTRATOR',
@@ -33,6 +55,6 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         ]);
 
-        $sadmin->syncRolesWithoutDetaching([$sadminrole]);
+        $sadmin->syncRolesWithoutDetaching([$sadminRole]);
     }
 }
