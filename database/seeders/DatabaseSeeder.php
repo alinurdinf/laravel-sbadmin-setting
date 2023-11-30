@@ -48,6 +48,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $sadmin = ModelsUser::create([
+            'identity_number' => '0',
             'name' => 'Super',
             'last_name' => 'Administrator',
             'email' => 'admin@mail.com',

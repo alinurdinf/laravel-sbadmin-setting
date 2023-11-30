@@ -24,6 +24,7 @@ class AddUserRequest extends FormRequest
     public function rules()
     {
         return [
+            'identity_number' => 'required|unique:users',
             'name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email|unique:users',

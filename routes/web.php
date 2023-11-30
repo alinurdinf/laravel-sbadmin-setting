@@ -32,5 +32,9 @@ Route::get('/blank', function () {
 
 Route::middleware('auth')->group(function () {
     Route::resource('basic', BasicController::class);
+    Route::group(['middleware' => 'auth', 'prefix' => 'masterdata'], function () {
+        Route::resource('lecture', LectureController::class);
+        Route::resource('student', StudentController::class);
+    });
     Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index'])->name('logs');
 });
